@@ -490,7 +490,7 @@ sub Run {
                 . "SortBy=$Self->{SortBy};Order=$Self->{OrderBy};StartHit=$Self->{StartHit}";
 
             # encode back link to Base64 for easy HTML transport
-            $ZoomBackLink = MIME::Base64::encode_base64($ZoomBackLink);
+            $ZoomBackLink = MIME::Base64::encode_base64(encode("UTF-8",$ZoomBackLink),'');
 
             for my $FAQID (@ViewableFAQIDs) {
 
